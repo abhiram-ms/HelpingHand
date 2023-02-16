@@ -5,8 +5,6 @@ import 'package:helping_hand/UI/Authentication/RegisterUser.dart';
 
 import '../../Constants/Constants.dart';
 import '../../StateManagement/AuthenticationController.dart';
-import '../../Utils/Auth.dart';
-import '../../drawers/bottomnavbar.dart';
 
 class LoginUser extends StatelessWidget {
    LoginUser({Key? key}) : super(key: key);

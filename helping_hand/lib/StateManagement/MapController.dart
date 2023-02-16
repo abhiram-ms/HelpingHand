@@ -27,8 +27,8 @@ class MapController extends GetxController{
       customIcon = d;
       update();
     });
-    lat = '10.228370';
-    long ='76.198799';
+    lat = '19.020999908';
+    long ='72.874000549';
     super.onInit();
   }
 
@@ -39,7 +39,7 @@ class MapController extends GetxController{
   // final Completer<GoogleMapController> _controller = Completer();
   // Completer<GoogleMapController> get completercontrol => _controller;
 
-  static  CameraPosition initial =  const CameraPosition(target:LatLng(10.228370,76.198799),zoom: 15);
+  static  CameraPosition initial =  const CameraPosition(target:LatLng(19.020999908,72.874000549),zoom: 15);
 
   //lower part
 
@@ -142,7 +142,9 @@ class MapController extends GetxController{
          loadingbar();
          for (var document in querySnapshot.docs) {
            if(document.data()['deleteTime'] > unixTime){
-             print(document.data()['needed_supply']);
+             if (kDebugMode) {
+               print(document.data()['needed_supply']);
+             }
              docsformap.add(DocsForMap(document.data()['description'], document.data()['uploadDate'], document.data()['deleteTime'],
                  document.data()['needed_supply'], document.data()['downloadUrl'], lat: double.parse(document.data()['lat']),
                  long: double.parse(document.data()['long']), title:document.data()['title'], email:document.data()['e-mail']));
@@ -183,12 +185,16 @@ class MapController extends GetxController{
   bool isloading = false;
 
   void loadingbar() {
-    print('loading bar called');
+    if (kDebugMode) {
+      print('loading bar called');
+    }
     isloading = true;
     update();
   }
   void loadingbaroff() {
-    print('loading bar ended');
+    if (kDebugMode) {
+      print('loading bar ended');
+    }
     isloading = false;
     update();
   }

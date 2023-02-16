@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:helping_hand/Constants/Constants.dart';
-import 'package:helping_hand/UI/Bottom%20Navigation/Help.dart';
 import 'package:helping_hand/UI/Map/Mappage.dart';
 import 'package:helping_hand/UI/Morepages/Alert.dart';
 import 'package:helping_hand/Utils/Auth.dart';
@@ -53,7 +52,7 @@ buildMenuItems(BuildContext context) => Container(padding: const EdgeInsets.all(
         leading: const Icon(Icons.add_alert,color: Colors.redAccent,),
         title: const Text('Alerts'),
         onTap: (){
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>   Alerts()));
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>   const Alerts()));
         },
       ),
       const Divider(color: Colors.red,),
@@ -80,7 +79,7 @@ buildMenuItems(BuildContext context) => Container(padding: const EdgeInsets.all(
         leading: const Icon(Icons.question_mark_sharp,color: Colors.redAccent,),
         title: const Text('About us'),
         onTap: (){
-          Navigator.push(context,MaterialPageRoute(builder: (context)=>   AboutUS()));
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>   const AboutUS()));
         },
       ),
       const Divider(color: Colors.red,),

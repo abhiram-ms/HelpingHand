@@ -199,7 +199,9 @@ class AddMediaController extends GetxController{
     update();
   }
   void loadingbaroff() {
-    print('loading bar ended ::::');
+    if (kDebugMode) {
+      print('loading bar ended ::::');
+    }
     isloading = false;
     update();
   }

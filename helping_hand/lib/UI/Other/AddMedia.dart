@@ -8,7 +8,6 @@ import 'package:helping_hand/UI/Bottom%20Navigation/My%20status.dart';
 import '../../StateManagement/AddMediaController.dart';
 import '../../StateManagement/BarController.dart';
 import '../../StateManagement/MapController.dart';
-import '../../drawers/bottomnavbar.dart';
 
 class AddMedia extends StatelessWidget {
   final int frompages;

@@ -1,14 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:helping_hand/StateManagement/AuthenticationController.dart';
 import 'package:helping_hand/UI/Authentication/LoginUser.dart';
 
 import '../../Constants/Constants.dart';
-import '../../Utils/Auth.dart';
-import '../../drawers/bottomnavbar.dart';
 import '../Bottom Navigation/My status.dart';
 
 class RegisterUser extends StatelessWidget {
