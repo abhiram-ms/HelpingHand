@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/helping_hand/helping_hand.iml" filepath="$PROJECT_DIR$/helping_hand/helping_hand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helping_hand/android/helping_hand_android.iml" filepath="$PROJECT_DIR$/helping_hand/android/helping_hand_android.iml" />
+    </modules>
+  </component>
+</project>
