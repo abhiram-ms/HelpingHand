@@ -20,7 +20,7 @@ class Communication extends StatelessWidget {
             FutureBuilder(
                 future: barController.fetchCommunications(),
                 builder: (BuildContext context, snapshot) {
-                  return SizedBox(height: 400,
+                  return SizedBox(height: MediaQuery.of(context).size.height,
                     child: GetBuilder<BarController>(builder:(_)=>ListView.builder(
                         itemCount:snapshot.data == null ? 0 : snapshot.data.length,
                         itemBuilder: (BuildContext context, int index) {

@@ -126,6 +126,7 @@ class MapController extends GetxController{
   //MAP PAGE CONTROLLER CONTROLLS ::::::::::::::
 
   List<DocsForMap> docsformap=[];
+  //Set<DocsForMap>docsmapset= <DocsForMap>{};
   Future<void> fetchMap(String page)async {
     try{
        loadingbar();
@@ -143,12 +144,24 @@ class MapController extends GetxController{
          for (var document in querySnapshot.docs) {
            if(document.data()['deleteTime'] > unixTime){
              if (kDebugMode) {
-               print(document.data()['needed_supply']);
+               print(document.data()['title'] + document.data()['e-mail']);
              }
              docsformap.add(DocsForMap(document.data()['description'], document.data()['uploadDate'], document.data()['deleteTime'],
                  document.data()['needed_supply'], document.data()['downloadUrl'], lat: double.parse(document.data()['lat']),
                  long: double.parse(document.data()['long']), title:document.data()['title'], email:document.data()['e-mail']));
+             // docsmapset.add(DocsForMap(document.data()['description'], document.data()['uploadDate'], document.data()['deleteTime'],
+             //     document.data()['needed_supply'], document.data()['downloadUrl'], lat: double.parse(document.data()['lat']),
+             //     long: double.parse(document.data()['long']), title:document.data()['title'], email:document.data()['e-mail']));
+             if (kDebugMode) {
+               print('while adding ${docsformap.length}');
+             }
            }
+         }
+         if (kDebugMode) {
+           print('this is complete docsformap $docsformap');
+         }
+         if (kDebugMode) {
+           print('this is length : ${docsformap.length}');
          }
          //adding markers
          markers.clear();
@@ -157,7 +170,10 @@ class MapController extends GetxController{
                position: LatLng(docsformap[i].lat,docsformap[i].long),
                infoWindow:InfoWindow(title: docsformap[i].title,snippet: docsformap[i].desc),
                icon:customIcon,
-               onTap: (){markerBar(docsformap,i);}
+               onTap: (){
+             markerBar(docsformap,i);
+            // googleMapController.animateCamera()
+           }
            ));
          }
          for (var element in markers) {

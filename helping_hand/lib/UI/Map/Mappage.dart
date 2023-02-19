@@ -44,33 +44,43 @@ class Mappage extends StatelessWidget {
                           ),
                           Positioned(
                             top: 50,
-                            height: 60,
                             width: MediaQuery.of(context).size.width,
-                            child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            child: Column(
                               children: [
-                                SizedBox(width: MediaQuery.of(context).size.width/2,
-                                    child: ListPickerField(label:'select', items:pageList,controller:selectPage,)),
-                                ElevatedButton(
-                                    style:const ButtonStyle(backgroundColor:MaterialStatePropertyAll(Colors.redAccent)) ,
-                                    onPressed: () {
-                                      mapcontroller.markerBaroff();
-                                      if(selectPage.text.isNotEmpty){
-                                        mapcontroller.fetchMap(selectPage.text);
-                                      }else{
-                                        Get.snackbar('error','select a page from dropdown menu');
-                                      }
-                                    },
-                                    child:const Text('Get',style: TextStyle(color: Colors.white),)),
-                                FloatingActionButton(
-                                  heroTag: 'btn1',
-                                  onPressed:(){
-                                    mapcontroller.markerBaroff();
-                                    Get.to(()=>Emergency());
-                                  },
-                                  child: const Icon(Icons.emergency_outlined),
-                                )
+                                Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  children: [
+                                    SizedBox(width: MediaQuery.of(context).size.width/2,
+                                        child: ListPickerField(label:'select', items:pageList,controller:selectPage,)),
+                                    ElevatedButton(
+                                        style:const ButtonStyle(backgroundColor:MaterialStatePropertyAll(Colors.redAccent)) ,
+                                        onPressed: () {
+                                          mapcontroller.markerBaroff();
+                                          if(selectPage.text.isNotEmpty){
+                                            mapcontroller.fetchMap(selectPage.text);
+                                          }else{
+                                            Get.snackbar('error','select a page from dropdown menu');
+                                          }
+                                        },
+                                        child:const Text('Get',style: TextStyle(color: Colors.white),)),
+                                    FloatingActionButton(
+                                      heroTag: 'btn1',
+                                      onPressed:(){
+                                        mapcontroller.markerBaroff();
+                                        Get.to(()=>Emergency());
+                                      },
+                                      child: const Icon(Icons.emergency_outlined),
+                                    )
+                                  ],
+                                ),
+                                GetBuilder<MapController>(builder: (_)=>Container(
+                                  color: Colors.redAccent,
+                                  padding: const EdgeInsets.all(8),
+                                  child: Text('Total Help Required : ${mapcontroller.docsformap.length}',
+                                    style: const TextStyle(color: Colors.white),),
+                                ))
                               ],
                             ),
+
                           ),
                           Positioned(
                             bottom: 50,
