@@ -39,7 +39,7 @@ class MapController extends GetxController{
   // final Completer<GoogleMapController> _controller = Completer();
   // Completer<GoogleMapController> get completercontrol => _controller;
 
-  static  CameraPosition initial =  const CameraPosition(target:LatLng(19.020999908,72.874000549),zoom: 15);
+  final  CameraPosition initial =  const CameraPosition(target:LatLng(19.020999908,72.874000549),zoom: 15);
 
   //lower part
 

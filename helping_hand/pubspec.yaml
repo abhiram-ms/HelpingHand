@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_maps_flutter:
+  google_maps_flutter_web:
   geolocator:
   animated_splash_screen:
   get:

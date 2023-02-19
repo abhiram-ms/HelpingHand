@@ -33,12 +33,12 @@ class Mappage extends StatelessWidget {
                         children: [
                           SizedBox(
                             height: MediaQuery.of(context).size.height,
-                            child: GetBuilder<MapController>(builder: (_)=>GoogleMap(initialCameraPosition:MapController.initial,
+                            child: GetBuilder<MapController>(builder: (_)=>GoogleMap(initialCameraPosition:mapcontroller.initial,
                               mapType: MapType.normal,markers:mapcontroller.markers,
                                 onMapCreated: (GoogleMapController controller){
                                     mapcontroller.markers.clear();
                                     mapcontroller.googleMapController = controller;
-                                    mapcontroller.liveLocation();
+                                    //mapcontroller.liveLocation();
                               },),
                             )
                           ),
