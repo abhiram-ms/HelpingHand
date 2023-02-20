@@ -68,7 +68,7 @@ class AddMediaController extends GetxController{
     livelocation(mapcontroller);
     getListData(barController, checkboxController);
     try{
-      addData(desc,deletetime);
+      await addData(desc,deletetime);
       filewepicked.clear();
     }catch(e){
       if (kDebugMode) {
@@ -165,6 +165,7 @@ class AddMediaController extends GetxController{
     loadingbaroff();
   }
   void pickplatform(BarController barController,CheckboxController checkboxController) {
+    loadingbar();
     if(frompage == 0){
       return;
     }else if(frompage == 1){
@@ -186,12 +187,14 @@ class AddMediaController extends GetxController{
     }else{
       return;
     }
+    loadingbaroff();
   }
 
 
   bool isloading = false;
 
   void loadingbar() {
+
     if (kDebugMode) {
       print('loading bar called ::::');
     }
