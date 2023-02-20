@@ -9,7 +9,6 @@ import 'package:helping_hand/StateManagement/MapController.dart';
 import 'package:helping_hand/Utils/AssetObject.dart';
 import 'package:helping_hand/Utils/Auth.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../drawers/bottomnavbar.dart';
 import 'BarController.dart';
 import 'CheckboxController.dart';
@@ -189,6 +188,7 @@ class AddMediaController extends GetxController{
     }
     loadingbaroff();
   }
+
 
 
   bool isloading = false;
